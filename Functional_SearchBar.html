@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+        .input {
+            font-size: 1rem;
+        }
+        .user-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: .35rem;
+            margin-top: 1rem;
+        }
+        .card {
+            border: 1px solid black;
+            background: white;
+            padding: .5rem;
+        }
+        .card > .header {
+            margin-bottom: .25rem;
+        }
+        .card > .body {
+            font-size: .8rem;
+            color: #777;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-wrapper">
+        <label for="search">Search users</label>
+        <!-- Added 'data-search' attribute to the input for identification -->
+        <input type="search" id="search" data-search>
+    </div>
+    <div class="user-cards" data-user-cards-container>
+        <!-- Added a paragraph for displaying "No results found" message -->
+        <p class="no-results hide">No results found</p>
+    </div>
+    <template data-user-template>
+        <div class="card">
+            <div class="header" data-header></div>
+            <div class="body" data-body></div>
+        </div>
+    </template>
+    <script>
+        const userCardTemplate = document.querySelector("[data-user-template]");
+        const userCardContainer = document.querySelector("[data-user-cards-container]");
+        const searchInput = document.querySelector("[data-search]");
+        const noResultsMessage = document.querySelector(".no-results");
+
+        let users = [];
+
+        searchInput.addEventListener("input", (e) => {
+            const value = e.target.value.toLowerCase();
+            // Filter users to find matching users based on input value
+            const matchingUsers = users.filter(user => {
+                return user.name.toLowerCase().includes(value) || user.email.toLowerCase().includes(value);
+            });
+
+            // Clear previous results in the userCardContainer
+            userCardContainer.innerHTML = "";
+            // Hide the "No results found" message by default
+            noResultsMessage.classList.add("hide");
+
+            if (matchingUsers.length === 0) {
+                // If no matching users found, display the "No results found" message
+                noResultsMessage.classList.remove("hide");
+            } else {
+                // Append matching user cards to the userCardContainer
+                matchingUsers.forEach(user => {
+                    userCardContainer.appendChild(user.element);
+                });
+            }
+        });
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(data => {
+            // Create user cards and store user data in the 'users' array
+            users = data.map(user => {
+                const card = userCardTemplate.content.cloneNode(true).querySelector(".card");
+                const header = card.querySelector("[data-header]");
+                const body = card.querySelector("[data-body]");
+                header.textContent = user.name;
+                body.textContent = user.email;
+                return { name: user.name, email: user.email, element: card };
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+        .input {
+            font-size: 1rem;
+        }
+        .user-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: .35rem;
+            margin-top: 1rem;
+        }
+        .card {
+            border: 1px solid black;
+            background: white;
+            padding: .5rem;
+        }
+        .card > .header {
+            margin-bottom: .25rem;
+        }
+        .card > .body {
+            font-size: .8rem;
+            color: #777;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-wrapper">
+        <label for="search">search users</label>
+        <input type="search" id="search" data-search>
+    </div>
+    <div class="user-cards" data-user-cards-container>
+        
+    </div>
+    <template data-user-template>
+        <div class="card">
+            <div class="header" data-header></div>
+            <div class="body" data-body></div>
+        </div>
+    </template>
+    <script>
+        const userCardTemplate = document.querySelector("[data-user-template]"); // Corrected selector
+        const userCardContainer = document.querySelector("[data-user-cards-container]"); // Corrected selector
+        const searchInput = document.querySelector("[data-search]");
+
+        let users = [];
+
+        searchInput.addEventListener("input", (e) => {
+            const value = e.target.value.toLowerCase();
+            users.forEach(user => {
+                const isVisible = user.name.toLowerCase().includes(value) || user.email.toLowerCase().includes(value);
+                user.element.classList.toggle("hide", !isVisible);
+            });
+        });
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json()) // Added parentheses to call the res.json() method
+        .then(data => {
+            users = data.map(user => {
+                const card = userCardTemplate.content.cloneNode(true).querySelector(".card");
+                const header = card.querySelector("[data-header]");
+                const body = card.querySelector("[data-body]");
+                header.textContent = user.name;
+                body.textContent = user.email;
+                userCardContainer.appendChild(card);
+                return { name: user.name, email: user.email, element: card };
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .serach-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+        .input{
+            font-size: 1rem;
+        }
+        .user-cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr ));
+            gap: .35rem;
+            margin-top: 1rem;
+        }
+        .card{
+            border: 1px solid black;
+            background: white;
+            padding: .5rem;
+        }
+        .car > .header{
+            margin-bottom: .25rem;
+        }
+        .card > .body{
+            font-size: .8rem;
+            color: #777;
+        }
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-wrapper">
+        <label for="search">search userrs</label>
+        <input type="search" id="search" data-search>
+    </div>
+    <div class="user-cards" data-user-cards-container>
+        
+    </div>
+    <template data-user-template>
+        <div class="card">
+            <div class="hearder" data-header></div>
+            <div class="body" data-body></div>
+        </div>
+    </template>
+    <script>
+    const userCardTemplate = document.querySelector("[data-user-template]")
+    const userCardContainer = document.querySelector("[data-user-cards-container]")
+    const SearchInput = document.querySelector("[data-search]")
+    
+
+    let users = []
+        SearchInput.addEventListener("input", (e) => {
+            const value = e.target.value.tolowerCase()
+            users.forEach(user => {
+                const isvisible = user.name.includes(value).tolowerCase() ||
+                 user.email.includes(value).tolowerCase()
+                user.element.classList.toggle("hide", isvisible)
+                
+            })
+            console.log(users)
+        })
+
+     
+        fetch("//jsonplaceholder.typicode.com/users")
+        .then(res => res.json)
+        .then(data => {
+            user = data.map(user => {
+                const card = userCardTemplate.content.cloneNode(true).children[0]
+                const header = card.querySelector("[data-header]")
+                const body = card.querySelector("[data-body]")
+                header.textcontent = user.name
+                body.textcontent = user.email
+                // console.log(card)
+                userCardContainer.append(card)
+                return {name: user.name, email: user.email, element: card }
+            });
+        }) 
+
+
+    </script>
+</body>
+</html> -->

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Download Website</title>
+    <style>
+        /* Your CSS styles for fonts and headers go here */
+    </style>
+</head>
+<body>
+    <input type="text" id="search-bar" placeholder="Search fonts...">
+    <div id="font-list">
+        <div class="font" id="font1">
+            <h3 class="font-name">Font Name 1</h3>
+            <!-- Font details and download link here -->
+            other stuff about the font
+        </div>
+        <div class="font" id="font2">
+            <h3 class="font-name">Font Name 2</h3>
+            <!-- Font details and download link here -->
+            other stuff about the font but this time the second one
+        </div>
+        <!-- Add more fonts as needed -->
+    </div>
+    <script>
+        // JavaScript code for filtering fonts based on user input
+        const searchInput = document.getElementById("search-bar");
+        const fontList = document.getElementById("font-list");
+
+        searchInput.addEventListener("input", function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            const fonts = fontList.getElementsByClassName("font");
+
+            for (const font of fonts) {
+                const fontName = font.querySelector(".font-name").textContent.toLowerCase();
+                if (fontName.includes(searchTerm)) {
+                    font.style.display = "block";
+                } else {
+                    font.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Search Bar Example</title>
+    <style>
+        #search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #search-input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+        }
+
+        .result-tiitle {
+            font-weight: bold;
+        }
+
+        .result-description {
+            font-style: italic;
+        }
+        .result-question{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+    </div>
+    <div id="search-results">
+        Results will be displayed here
+    </div>
+
+    <script>
+        // Function to perform the search
+        function performSearch() {
+            const searchInput = document.getElementById("search-input");
+            const searchTerm = searchInput.value.toLowerCase();
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            // Dummy data array for demonstration
+            const dummyData = [
+                {
+                    title: "Result 1: Lorem ipsum dolor sit amet",
+                    description: "john cena is not a margin-left",
+                },
+                {
+                    title: "Result 2: Consectetur adipiscing elit",
+                    description: "Car is a type of vehicle.",
+                },
+                {
+                    title: "why do i love jesus",
+                    description: "why does jesus love me more",
+                    question: "why are you too lazy to love jesus back"
+                }
+                // Add more items with title and description as needed
+            ];
+
+            let found = false;
+
+            // Filter and display matching results
+            dummyData.forEach(item => {
+                if (item.title.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm)) {
+                    const resultItem = document.createElement("div");
+                    resultItem.classList.add("result-item");
+
+                    const titleElement = document.createElement("p");
+                    titleElement.classList.add("result-tiitle");
+                    titleElement.textContent = item.title;
+
+                    const descriptionElement = document.createElement("p");
+                    descriptionElement.classList.add("result-description");
+                    descriptionElement.textContent = item.description;
+
+
+                    const questionElement= document.createElement("p");
+                    questionElement.classList.add("result-question");
+                    questionElement.textContent = item.question;
+
+                    resultItem.appendChild(titleElement);
+                    resultItem.appendChild(descriptionElement);
+                    resultItem.appendChild(questionElement);
+
+                    resultsContainer.appendChild(resultItem);
+                    found = true;
+                }
+            });
+
+            // Display "No Results" message if no matches found
+            if (!found) {
+                const noResultsMessage = document.createElement("p");
+                noResultsMessage.textContent = "No results";
+                resultsContainer.appendChild(noResultsMessage);
+            }
+        }
+
+        // Attach the search function to the input field's "input" event
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("input", performSearch);
+
+        // Call the performSearch function on initial load
+        performSearch();
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Search Bar Example</title>
+    <style>
+        #search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #search-input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #search-results {
+            text-align: left;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+    </div>
+    <div id="search-results">
+       a comment Results will be displayed here
+    </div>
+
+    <script>
+        // Function to perform the search
+        function performSearch() {
+            const searchInput = document.getElementById("search-input");
+            const searchTerm = searchInput.value.toLowerCase();
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            // Dummy data array for demonstration
+            const dummyData = [
+                "Result 1: Lorem ipsum dolor sit amet",
+                "Result 2: Consectetur adipiscing elit",
+                "Result 3: Sed do eiusmod tempor incididunt",
+                "Result 4: Ut labore et dolore magna aliqua",
+                "Result 5: Ut enim ad minim veniam",
+            ];
+
+            let found = false;
+
+            // Filter and display matching results
+            dummyData.forEach(item => {
+                if (item.toLowerCase().includes(searchTerm)) {
+                    const resultItem = document.createElement("p");
+                    resultItem.textContent = item;
+                    resultsContainer.appendChild(resultItem);
+                    found = true;
+                }
+            });
+
+            // Display "No Results" message if no matches found
+            if (!found) {
+                const noResultsMessage = document.createElement("p");
+                noResultsMessage.textContent = "No results";
+                resultsContainer.appendChild(noResultsMessage);
+            }
+        }
+
+        // Attach the search function to the input field's "input" event
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("input", performSearch);
+
+        // Call the performSearch function on initial load
+        performSearch();
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Search Bar Example</title>
+    <style>
+        #search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #search-input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #search-results {
+            text-align: left;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+    </div>
+    <div id="search-results">
+        
+    </div>
+
+    <script>
+        // Function to perform the search
+        function performSearch() {
+            const searchInput = document.getElementById("search-input");
+            const searchTerm = searchInput.value.toLowerCase();
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            // Dummy data array for demonstration
+            const dummyData = [
+                "Result 1: Lorem ipsum dolor sit amet",
+                "Result 2: Consectetur adipiscing elit",
+                "Result 3: Sed do eiusmod tempor incididunt",
+                "Result 4: Ut labore et dolore magna aliqua",
+                "Result 5: Ut enim ad minim veniam",
+            ];
+
+            // Filter and display matching results
+            dummyData.forEach(item => {
+                if (item.toLowerCase().includes(searchTerm)) {
+                    const resultItem = document.createElement("p");
+                    resultItem.textContent = item;
+                    resultsContainer.appendChild(resultItem);
+                }
+            });
+        }
+
+        // Attach the search function to the input field's "input" event
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("input", performSearch);
+    </script>
+</body>
+</html> -->

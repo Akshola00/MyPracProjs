@@ -1,0 +1,74 @@
+    <!-- <script src="./first_java_script.js"></script> -->
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Work One</title>
+        <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("#para").prepend(" <b>jquery </b>");
+                    $("#para").append(" <b>append() function </b>.");
+                    $("#para").after("<h3>this is the newly inserted heading</h3>");
+                    $("#newhead").remove();
+                    $("#para").toggle(1000);
+                    // $("#hideen").hide(1000);
+                })
+                    $("#para").slid-eToggle(1000);
+                    $("#para").mouseenter(function () {
+                        $("#para").animate({
+                            center: '250px',
+                            opacity:'0.5',
+                            height:'250px',
+                            width:'250px'
+                    })
+                    
+                });
+                $("#para").mouseleave(function () { 
+                    $("#para").animate({
+                        opacity:'1',
+                        height:'100px',
+                        width:'100px'
+                    }); });          
+            });
+        </script>
+
+    </head>
+    <h3></h3>
+    <body>
+
+        <script src="./jquery-3.6.0.min.js"></script>
+        <div id="para">what do we have here</div>
+        <div id="newhead">what do we have here</div>
+        <button>caudal bone of han</button>
+
+        
+
+                <!-- <img src="./image/ASSHN1.png" alt=""> -->
+                <p id="hideen">please berra have my money</p>
+                <div class="card">
+                    
+                    <img src="./image/0b15f7c0460fcfd7ddf2311c676c8097.jpg" alt="person image" height="400px" width="350px">
+                    <div class="text">
+                        <span>"</span>
+                        <p>Like Neo from the Matrix, the world opens up and you start seeing everythin in 1's and 0's</p>
+                        <h3>Edward S, Hisey</h3>
+                        <h6>Cheif Marketing Officer</h6>
+                    </div>
+                </div>
+               <div id="para" style="height: 200px; width: 200px; background-color: brown;" >
+                    <span>weebly</span>
+                    <span>TESLA</span>
+                    <span>TnW</span>
+                    <span>cPanel</span>
+                    <button>View all</button>
+                    
+                </div>
+                <script src="./jquery-3.6.0.min.js"></script>
+    </body>
+    
+    </html>

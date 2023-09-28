@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    body {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #667;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 2rem 0;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .menu>li,
+    .menu>a {
+      display: inline-block;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      padding: 10px 1.5rem;
+      transition: background-color .22s ease, color .22s ease;
+    }
+
+    .menu a:hover {
+      background-color: #f34949;
+      color: white;
+    }
+
+    .submenu,
+    .submenu2 {
+      position: static;
+      background-color: transparent;
+      width: auto;
+      left: auto;
+      display: block;
+      animation: none;
+    }
+
+    .menu li:hover > .submenu,
+    .submenu:hover > .submenu2 {
+      display: none;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+      header {
+        padding: 1rem 0;
+      }
+
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .menu li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">Blog</h1>
+      
+    </nav>
+  </header>
+
+  <!-- Rest of your HTML content here -->
+
+</body>
+
+</html>

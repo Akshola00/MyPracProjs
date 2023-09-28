@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My todo app</title>
+</head>
+
+<body>
+    <img src="" alt="">
+    <div>Get greoceries</div>
+    <div>Wash car</div>
+    <div>Make dinner</div>
+    <button id="todo-button" onclick="change('done')">press me</button>
+    <div id="counter">0</div>
+    <button onclick="myclick()">up</button>
+
+    <script>
+        let mv = document.getElementById('counter');
+        let count = 0;
+        function myclick() {
+            // console.log(mv)
+            count = count + 1;
+            mv.innerText = count;
+        }
+        function change(inp){
+            let mv = document.getElementById('todo-button');
+            mv.innerText = inp;
+        }
+        alert('hello');
+        console.log('jaguar');
+        document.body.innerHTML ='hello';
+
+        let var1 = 'get greoceries'; let var2 = 'wash car'; let var3 = 'make dinner';
+        arrays
+        let mf_array = ['get greoceries', 'wash car', 'make dinner'] // an array
+        mf_array.push('another variable') //push - a predefined function in java script
+        mf_array.forEach(function (todotitile) {
+            let element = document.createElement('div')
+            element.innerText = todotitile;
+            document.body.appendChild(element);
+        });
+
+        function todo(tn) {
+            let element = document.createElement('div')
+            element.innerText = tn;
+            document.body.appendChild(element); //appendChild: use to add at the end of the body
+        }
+
+        todo(var1);
+        todo(var2);
+        todo(var3);
+        // 'typeof 99' - gives you the data type of what you put after it
+
+        // adding a function to a string
+        console.log('hello'.toLocaleUpperCase()) // changes the gib=ven d=string to upper case note: dont forget the bracket
+
+        let age = 35;
+        let message = 'i am ' + age + 'years old';
+        console.log(message)
+        let month = june; let day_month = 13; let yr = 2009
+        console.log('it is' + month + day_month + yr)
+
+
+        let element = document.createElement('div')
+        element.innerText = var1;
+        document.body.appendChild(element); //appendChild: use to add at the end of the body
+
+        element = document.createElement('div')
+        element.innerText = var2;
+        document.body.appendChild(element);
+
+        element = document.createElement('div')
+        element.innerText = var3;
+        document.body.appendChild(element);
+        document.body.append(element)
+        alert(element)
+        console.log(element)
+
+
+        function toupper(an) {
+            let myarray = [];
+            an.forEach((element) => { // element - holds the value of each element in the array during the iteration process.
+                myarray.push(element.toUpperCase())
+            });
+            console.log(myarray)
+        }
+        toupper(['a', 'b'])
+
+        function arayD(an) {
+            let ar_ray = []
+            an.forEach((element) => {
+                ar_ray.push(element, element) // using concat an.concat(an);
+            });
+            console.log(ar_ray)
+        }
+       arayD(['cow', 'john']) 
+
+
+
+    </script>
+</body>
+
+</html>

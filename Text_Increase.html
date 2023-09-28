@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Size Scroller</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.container {
+  text-align: center;
+}
+
+#text {
+  font-size: 16px;
+  transition: font-size 0.3s ease-in-out;
+}
+
+#fontSizeInput {
+  width: 100%;
+}
+
+</style>
+<body>
+  <div class="container">
+    <p id="text">This is a sample text with adjustable font size.</p>
+    <input type="range" id="fontSizeInput" min="10" max="50" value="16">
+  </div>
+  <script >
+    const fontSizeInput = document.getElementById('fontSizeInput');
+const text = document.getElementById('text');
+
+fontSizeInput.addEventListener('input', () => {
+  const newSize = `${fontSizeInput.value}px`;
+  text.style.fontSize = newSize;
+});
+
+  </script>
+</body>
+</html>

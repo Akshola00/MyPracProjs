@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form _One</title>
+    <style>
+        form{
+            width: 400px;
+            background-color: rgb(23, 23, 75);
+            color: azure;
+            display: grid;
+            place-items:center;
+            row-gap: 4px;
+            padding: 50px;
+        }
+        .input1{
+            display: block;
+            width: 70%;
+            height: 25px;
+            border-radius: 40px;
+            border: none;
+        }
+        select{
+            width: 100px;
+            text-align: center;
+            background-color: blue;
+            border: none;
+            color: white;
+        }
+        button{
+            color: aliceblue;
+            background-color: rgb(120, 121, 160);
+            border: none;
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript HTML Events</h2>
+    <h2 onclick="this.innerHTML='Ooop!' "> click in this text</h2>
+    <h2 onclick="changetext(this)">click in this text</h2>
+    <h2 onmouseleave="changetext(this)">click in this text</h2>
+    
+    docu
+
+    <form action="">
+        <label for="firstname">First Name</label>
+        <input class="input1" type="text" name="firstname" placeholder="FIRST NAME">
+        <label for="lastname">LAST NAME</label>
+        <input class="input1" type="text" name="last name" placeholder="last name">
+        <label for="email">Email</label>
+        <input class="input1" type="email" placeholder="E-MAIl" >
+        <label for="number">phone number</label>
+        <input class="input1"type="number" placeholder="PHONE NUMBER">
+        <label for="state">Select State</label>
+        <select name="state" id="">
+            <option value="first">kaduna</option>
+            <option value="first">Abuja</option>
+            <option value="first">Kano</option>
+            <option value="first">Lagos</option>
+            <option value="first">Jos</option>
+            <option value="first">Benue</option>
+        </select>
+
+        <input type="radio" id="html" name="female" value="male"> 
+        <label for="male">Male</label>
+
+        <input type="radio" id="female1" name="female" value="female"> 
+        <label for="female">Famale</label>
+        <button>submit</button>
+        <!-- <input type="subm"> -->
+    </form>
+    <textarea name="" id="" cols="30" rows="10">u8ugyuyufugygguy</textarea>
+    <script>
+        setTimeout(() =>{
+            console.log('Delayed for 4 second')
+        }, "1000")
+        // close()
+
+    function changetext(id) {
+        id.innerHTML="Ooops!";
+    }        
+    window.screen.height.width
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

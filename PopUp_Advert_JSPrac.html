@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .inout {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .popup {
+            background-color: white;
+            /* width: 450px; */
+            height: 9cm;
+            padding: 30px 40px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            box-shadow: 0px 0px 5px 3px brown;
+            top: 50%;
+            border-radius: 8px;
+            font-family: system-ui;
+        }
+
+        .popup button {
+            display: block;
+            margin: 0 0 20px auto;
+            background-color: transparent;
+            font-size: 30px;
+            color: silver;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .popup p {
+            font-size: 14px;
+            text-align: justify;
+            margin: 20px 0;
+        }
+
+        .popup img {
+            display: block;
+            width: 150px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h2>A popup advert page</h2>
+        <p>Get your very hot shawarma here for only #15000 and help dtop the spread of food poisoning</p> <img
+            src="./images/buritos.webp" alt="">
+        <img src="./images/order.png" alt="">
+    </div>
+    </div>
+
+    <script>
+        function closeads(myid, myfc, mysfc) {
+            document.querySelector(myid).addEventListener("click", function () { //#close
+                document.querySelector(myfc).style.display = "none"; //".popup"
+                document.querySelector(mysfc).style.display = "none"; //".inout"
+            });
+        }
+
+        closeads("#close",".popup",".inout")
+    </script>
+</body>
+
+</html>

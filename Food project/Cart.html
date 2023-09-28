@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+</head>
+<body class="">
+    <style>
+        
+body{
+    /* background-color: #E3E7E8; */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='2000' preserveAspectRatio='none' viewBox='0 0 1440 2000'%3e%3cg clip-path='url(%26quot%3b%23SvgjsClipPath1588%26quot%3b)' fill='none'%3e%3crect width='1440' height='2000' x='0' y='0' fill='url(%23SvgjsLinearGradient1589)'%3e%3c/rect%3e%3ccircle r='40.295' cx='1025' cy='189.69' fill='url(%23SvgjsLinearGradient1590)'%3e%3c/circle%3e%3ccircle r='111.645' cx='1229.48' cy='243.94' fill='url(%23SvgjsLinearGradient1591)'%3e%3c/circle%3e%3c/g%3e%3cdefs%3e%3cclipPath id='SvgjsClipPath1588'%3e%3crect width='1440' height='2000' x='0' y='0'%3e%3c/rect%3e%3c/clipPath%3e%3clinearGradient x1='-9.72%25' y1='7%25' x2='109.72%25' y2='93%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1589'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(211%2c 35%2c 35%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='944.41' y1='189.69' x2='1105.59' y2='189.69' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1590'%3e%3cstop stop-color='%2332325d' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23424488' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='1006.19' y1='243.94' x2='1452.77' y2='243.94' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1591'%3e%3cstop stop-color='%23ab3c51' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='rgba(59%2c 40%2c 151%2c 1)' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+    font-family: system-ui;
+}
+.containers{
+    width: 1100px;
+    margin: auto;
+    transition: 0.5s;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 40px;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
+h1{
+    color: #fff;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+.list .item{
+    text-align: center;
+    background-color: rgb(114, 56, 78);
+    /* background-color: transparent; */
+    padding: 20px;
+    /* box-shadow: 0 50px 50px #757676; */
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+.list .item img{
+    width: 90%;
+}
+.list .item .title{
+    font-weight: 600;
+}
+.list .item .price{
+    margin: 10px;
+}
+.list .item button{
+    background-color: #701145;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 500px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.card h1{
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+
+    </style>
+ <div class="header-left">
+    <div class="logo">
+        <p>.Food Fusion</p><img class="tomato"src="./Images/Picsart_23-05-26_18-46-17-094.png" alt="">
+        <!-- <p id="logo" >FOOD AT IT'S VERY BEST</p> -->
+    </div>
+    <nav>
+       
+        
+      
+       <a href="./project.html" class="nav"><lord-icon src="https://cdn.lordicon.com/osuxyevn.json" trigger="hover"
+        colors="primary:#fff"  style="width:40px;height:40px;">
+       </lord-icon></a>
+       <h6 style="margin-left: -34px;" class="navname">Home</h6>
+
+
+        <a href="./projectsignup.html" class="nav"><lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json"
+                trigger="hover" colors="primary:#fff" style="width:40px;height:40px; ">
+            </lord-icon></a>
+        <h6 style="margin-left: -39px;" class="navname">Accounts</h6>
+
+        <a href="./watermelonpage.html" class="nav"><lord-icon src="https://cdn.lordicon.com/ogkplaef.json"
+                trigger="hover" colors="primary:#fff" style="width:35px;height:35px; ">
+            </lord-icon></a>
+        <h6 style="margin-left: -26px;" class="navname">Blog</h6>
+
+        <a href="Cart.html" class="nav"><lord-icon src="https://cdn.lordicon.com/udbbfuld.json" trigger="hover"
+            colors="primary:#fff" style="width:35px;height:35px; ">
+        </lord-icon></a>
+    <h6 style="margin-left: -27px;" class="navname">Cart</h6>
+        <!-- <h6 class="navname">Cart</h6> -->
+
+        
+    </nav>                
+    <!-- <a href="./Reservation.html" style="color: white;"> <button class="reserveee">Reservation</button></a> -->
+
+</div>
+
+    
+    <div class="containers">
+        <header>
+            <h1>Your Shopping Cart</h1>
+            <div class="shopping">
+                <lord-icon src="https://cdn.lordicon.com/udbbfuld.json" trigger="hover"
+            colors="primary:#fff" style="width:50px;height:50px; ">
+        </lord-icon>
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+        <div class="list">
+          
+        </div>
+    </div>
+    <div class="card">
+        <h1>Card</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+     <!-- FOOTER -->
+     <div class="footer">
+        <!-- <h3>.FOOD FUSION   </h3> -->
+        <div class="vertical-line2"></div>
+        <h6><span style="font-size: 25px ; color: #fff; margin-top: 150px;">Where?</span> <br> <br>No.10 Ahmadu bello way Makarfi plaza Kaduna</h6>
+      
+
+            <!-- <p style="color: #fff; font-size: 25px; margin-left: 500px; margin-top: -310px;">FOOD FUSION <br>KADUNA CITY
+                <br><br>ALL FEATURED IN <br> -->
+        <!-- <h6 style="color: #fff; margin-left: 500px;">Ahmadu Bello way ,<br>opposite UBA Bank</h6> -->
+ 
+        <!-- <h6 style="margin-left: 500px;">© 2023 ALL RIGHTS RESERVED <br> Di Food Fusion. <br><br> PRIVACY POLICY</h6> -->
+                
+        <div class="vertical-line1"></div>
+        <h6 class="when"><span style="font-size: 25px ; color: #fff;">When?</span><br> <br> We open from 10 am to 10 pm every day!</h6>
+                
+        <div class="vertical-line3"></div>
+        <h6 class="contact"><span style="font-size: 25px ; color: #fff;">Contact us!</span> <br> <br>+234 936 636 8298 <br>+234 736 606 8208 <br>+234 876 136 8238</h6>
+
+        <h6 class="social"><span style="color: #fff; font-size: 35px;">SOCIAL LIFE</span><br> Join our social life </h6>
+        <div class="social-media">
+            <a href="#"><img src="./Images/twitter_48px.png" alt=""></a>
+            <a href="#"><img src="./Images/whatsapp_48px.png" alt=""></a>
+            <a href="#"><img src="./Images/instagram_logo_48px.png" alt=""></a>
+        </div>
+    </div>
+
+
+    <script>
+        let openShopping = document.querySelector('.shopping');
+        let closeShopping = document.querySelector('.closeShopping');
+        let list = document.querySelector('.list');
+        let listCard = document.querySelector('.listCard');
+        let body = document.querySelector('body');
+        let total = document.querySelector('.total');
+        let quantity = document.querySelector('.quantity');
+        
+        openShopping.addEventListener('click', ()=>{
+            body.classList.add('active');
+        })
+        closeShopping.addEventListener('click', ()=>{
+            body.classList.remove('active');
+        })
+        
+        let products = [
+            {
+                id: 1,
+                name: 'BEEF and lemon',
+                // image: '1.PNG',
+                image: 'Picsart_23-05-29_12-03-41-089.png',
+                price: 120000
+            },
+            {
+                id: 2,
+                name: 'Porridge yam',
+                // image: '2.PNG',
+                image: 'Picsart_23-05-29_18-04-14-337.png',
+                price: 120000
+            },
+            {
+                id: 3,
+                name: 'PRODUCT NAME 3',
+                image: '3.PNG',
+                price: 220000
+            },
+            {
+                id: 4,
+                name: 'Toasted bread',
+                // image: '4.PNG',
+                image: 'Picsart_23-05-29_12-17-42-876.png',
+                price: 123000
+            },
+            {
+                id: 5,
+                name: 'PRODUCT NAME 5',
+                image: '5.PNG',
+                price: 320000
+            },
+            {
+                id: 6,
+                name: 'PIZZA',
+                image: '6.PNG',
+                price: 120000
+            },
+            {
+                id: 4,
+                name: 'Toasted bread',
+                // image: '4.PNG',
+                image: 'Picsart_23-05-29_12-17-42-876.png',
+                price: 123000
+            },
+            {
+                id: 5,
+                name: 'PRODUCT NAME 5',
+                image: '5.PNG',
+                price: 320000
+            },
+            {
+                id: 6,
+                name: 'PIZZA',
+                image: '6.PNG',
+                price: 120000
+            }
+        ];
+        let listCards  = [];
+        function initApp(){
+            products.forEach((value, key) =>{
+                let newDiv = document.createElement('div');
+                newDiv.classList.add('item');
+                newDiv.innerHTML = `
+                    <img src="Images/${value.image}">
+                    <div class="title">${value.name}</div>
+                    <div class="price">${value.price.toLocaleString()}</div>
+                    <button onclick="addToCard(${key})">Add To Cart</button>`;
+                list.appendChild(newDiv);
+            })
+        }
+        initApp();
+        function addToCard(key){
+            if(listCards[key] == null){
+                // copy product form list to list card
+                listCards[key] = JSON.parse(JSON.stringify(products[key]));
+                listCards[key].quantity = 1;
+            }
+            reloadCard();
+        }
+        function reloadCard(){
+            listCard.innerHTML = '';
+            let count = 0;
+            let totalPrice = 0;
+            listCards.forEach((value, key)=>{
+                totalPrice = totalPrice + value.price;
+                count = count + value.quantity;
+                if(value != null){
+                    let newDiv = document.createElement('li');
+                    newDiv.innerHTML = `
+                        <div><img src="image/${value.image}"/></div>
+                        <div>${value.name}</div>
+                        <div>${value.price.toLocaleString()}</div>
+                        <div>
+                            <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                            <div class="count">${value.quantity}</div>
+                            <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                        </div>`;
+                        listCard.appendChild(newDiv);
+                }
+            })
+            total.innerText = totalPrice.toLocaleString();
+            quantity.innerText = count;
+        }
+        function changeQuantity(key, quantity){
+            if(quantity == 0){
+                delete listCards[key];
+            }else{
+                listCards[key].quantity = quantity;
+                listCards[key].price = quantity * products[key].price;
+            }
+            reloadCard();
+        }</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

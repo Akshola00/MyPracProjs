@@ -1,0 +1,101 @@
+    <!-- <script src="./first_java_script.js"></script> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work One</title>
+    <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#para").prepend(" <b>jquery </b>");
+                $("#para").append(" <b>append() function </b>.");
+                $("#para").after("<h3>this is the newly inserted heading</h3>");
+                $("#newhead").remove();
+                // $("#hideen").hide(1000);
+                
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-color: azure;
+        }
+
+        .card {
+            background-color: white;
+            height: 400px;
+            width: 700px;
+            box-shadow: 0 4px7 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .text {
+            position: absolute;
+            top: 0px;
+            left: 430px;
+            width: 200px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .companies{
+            margin-left: auto;
+            margin-right: auto;
+            width: 700px;
+            /* display: inline-block; */
+            /* background-color: cadetblue; */
+            margin-top: 10px;
+        }
+        span{
+            display: inline-block;
+            box-shadow: 0 4px7 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);     
+            height: 40px;
+            width: 90px;
+            background-color: white;
+            margin-right:25px ;
+        }
+        button{
+            background-color: black;
+            color: white;
+            height: 40px;
+            width: 125px;
+            outline: none;
+        }
+    </style>
+</head>
+<h3></h3>
+<body>
+    <!-- <img src="./image/ASSHN1.png" alt=""> -->
+    <p id="hideen">please berra have my money</p>
+    <div class="card">
+        
+        <img src="./image/0b15f7c0460fcfd7ddf2311c676c8097.jpg" alt="person image" height="400px" width="350px">
+        <div class="text">
+            <span>"</span>
+            <p>Like Neo from the Matrix, the world opens up and you start seeing everythin in 1's and 0's</p>
+            <h3>Edward S, Hisey</h3>
+            <h6>Cheif Marketing Officer</h6>
+        </div>
+    </div>
+   <div class="companies">
+        <span>weebly</span>
+        <span>TESLA</span>
+        <span>TnW</span>
+        <span>cPanel</span>
+        <button>View all</button>
+        
+    </div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <div id="para">what do we have here</div>
+    <div id="newhead">what do we have here</div>
+    <button>caudal bone of han</button>
+
+</body>
+
+</html>

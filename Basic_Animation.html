@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMATION IN HTML</title>
+    <style>
+        .animate--fast{
+            animation-duration: 5s;
+        }
+        .btn{
+            font-size: 20px;
+            font-weight: 650;
+            padding: 0.5cm 1cm;
+            color: rgb(207, 51, 77);
+            background-color: rgb(233, 157, 169);
+            border: 10px solid rgb(207, 51, 77);
+            border-radius: 7px;
+
+
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+
+            /* transition: transform 0.5s ease 0s; another way for the above transition */
+        }
+
+        .btn:hover{
+            /* transform: translateY(-10px); */
+            background-color: rgb(207, 51, 77) ;
+            color: aliceblue;
+        }
+        .heading{
+            margin-left: 50%;
+            animation-name: heading_animation;
+            animation-duration: 3s; /* time needed for the animation */
+            animation-timing-function: ease-in; /* how the animation moves*/
+            animation-delay: 1s; /*makes the animation start immedaetly the page loads*/
+            /*animation-iteration-count: infinite;*/ /*sets the number of times the animation goes*/
+            animation-direction: noraml; /*sets weather the animation starts from the first keyframe or the last*/
+            animation-fill-mode: none; /*heading and keyframke css*/
+            animation: name duration timing-function delay iteration-count direction fill-mode; /*short hand of the above*/
+ 
+        }
+        @keyframes heading_animation{
+            from{
+                transform: translateX(-155px);
+            }
+
+            to{
+                transform: translateX(0);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Learn More</button>
+
+    <h1 class="heading animate--fast">hello, world</h1>
+    <h2 class="heading">bauka</h2>
+</body>
+</html>

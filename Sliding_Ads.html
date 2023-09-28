@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-container_b {
+            width: 20%;
+            /* Adjust the container width as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .text-content_b {
+            white-space: nowrap;
+            width: max-content;
+        }
+
+        .button-container_b {
+            margin-top: 100px;
+        }
+
+        button {
+            /* margin-right: 50%; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-container_b">
+        <div class="text-content_b">
+            <img src="./images/av2.jpg" alt=""> <img src="./images/av3.jpg" alt=""> <img src="./images/av4.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="button-container_b">
+        <button id="prevBtn"><</button>
+        <button id="nextBtn">></button>
+    </div>
+
+    <script>
+        const textContainer = document.querySelector('.text-container_b');
+        const textContent = document.querySelector('.text-content');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const scrollStep = 100; // Adjust the scrolling step as needed
+
+        prevBtn.addEventListener('click', function () {
+            textContainer.scrollLeft -= scrollStep;
+        });
+
+        nextBtn.addEventListener('click', function () {
+            textContainer.scrollLeft += scrollStep;
+        });
+
+    </script>
+</body>
+
+</html>

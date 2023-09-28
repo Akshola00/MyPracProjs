@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>worrk two</title>
+    <style>
+        body {
+            background-color: rgb(40, 40, 77);
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 50%;
+        }
+
+        .main {
+            background-color: rgb(18, 18, 53);
+            width: 50%;
+            height: 600px;
+            border-radius: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .margin {
+            margin-left: 50px;
+            color: white;
+        }
+
+        .second_line {
+            margin-top: -9px;
+        }
+
+        button {
+            font-size: 17px;
+            font-weight: 700;
+            padding: 4px 4px;
+            color: rgb(19, 19, 15);
+            background-color: orange;
+            border: 0px solid rgb(121, 121, 10);
+            border-radius: 0px;
+            justify-content: center;
+            margin-top: 1px;
+            padding: 10px 50px;
+        }
+
+        button:hover {
+            box-shadow: 6px rgb(37, 37, 37);
+        }
+
+        input[type="text"] {
+            width: 40%;
+            height: 180px;
+            border-radius: 8px;
+            box-shadow: none;
+            color: grey;
+            background-color: grey;
+        }
+
+        .font_reduction {
+            font-size: 15px;
+            margin-top: -7px;
+        }
+
+        .last_text {
+            margin-left: 1%;
+            position: absolute;
+        }
+
+        #box {
+            background-color: rgb(66, 65, 65);
+            border: none;
+            outline: none;
+            color: white;
+            width: 40%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            margin-right: 0px;
+            margin-left: 93.5%;
+            box-shadow: 2px solid red;
+            border-radius: 9px;
+            border: .5px solid rgb(40, 40, 77);
+            margin-top: 4px;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <img src="./image/delete_48px.png" alt="">
+        <div class="margin">
+            <h1>Whats happening?</h1>
+            <p class="second_line"> Click all that apply </p>
+
+            <label for=""><input type="checkbox"> video problem</label>
+            <div class="font_reduction ">
+                <p>Blurry, cuts out or looks strange in some way</p>
+            </div>
+            <label for=""><input type="checkbox">Sound problem</label>
+            <div class="font_reduction">
+                <p>Hard to hear, not matcheed with videos, or missing in some parts</p>
+            </div>
+            <label for=""><input type="checkbox">Subtitle or caption problem</label>
+            <div class="font_reduction">
+                <p>Missing, hard to read, not matched with sound, misspellings, or poor translations.</p>
+            </div>
+
+            <div>
+                <h4> It is something else </h4>
+            </div>
+            <div>
+                <div>
+                    <textarea name="" id="box" placeholder="lets know whats going on" cols="30" rows="10"></textarea>
+                </div>
+                <button>Submit Report</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

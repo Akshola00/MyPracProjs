@@ -1,0 +1,10 @@
+.anexample{
+    /* display: block; */
+    /* font-size: 100px; */
+}
+.anexample:hover{
+    .johnakpan{
+        font-size: 100px;
+    }
+    /* margin-top: 1000px; */
+}

@@ -1,0 +1,136 @@
+/* body{
+    background-image: url(./image/0b15f7c0460fcfd7ddf2311c676c8097.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+} */
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-color: #b4aee6;
+    color: #525252;
+}
+nav{
+    background: #dbc0c0;
+    /* width: %; */
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.logo{
+    width: 200px;
+    height: 80px;
+}
+.user_pic{
+    width: 100px;
+    background-color: rgb(224, 185, 185);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+nav ul{
+    width: 100%;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 4px 10px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration:wavy;
+}
+.sub_image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px ;
+}
+.sub_menu{
+    position: absolute;
+    /* po */
+    top: 100%;
+    right: 10px;
+    width: 240px;
+    border-radius: 10%;
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    /* transition:  0.5s ; */
+    transition: max-height 0.5s ;
+    /* overflow: hidden; */
+    /* color: black; */
+
+}
+.sub_menu.openmenu{
+    /* max-height: 400px; */
+}
+
+.jjc{
+    display: none;
+
+}
+
+
+.sub_menu h3{
+    position: relative;
+    font-weight: 900;
+    margin-left: 60px;
+    margin-right: 10px;
+    margin-top: -40px;
+}
+.john{
+    margin-top: 40px;
+    margin-left: 0px;
+    width: 240px;
+    height: 1px;
+    color: #dbc0c0;
+    background-color: #dbc0c0;
+    background: #dbc0c0;
+}
+.sub_menu_link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 1px 0 1px;
+}
+.sub_menu_link p{
+    width: 100%;
+}
+.sub_menu_link img{
+    width: 30px;
+    /* background: #fdfafa; */
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+.sub_menu_link span{
+    font-size: 22px;
+}
+.sub_menu_link:hover{
+    font-weight: 900;
+    text-shadow: red;
+}
+
+
+
+
+
+
+
+
+
+
+

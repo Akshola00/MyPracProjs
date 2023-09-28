@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./portfolio.css">
+</head>
+
+<body>
+    <div class="hero">
+        <nav>
+
+
+            <img src="./image/ASSHN1.png" width="280px" height="150px" class="logo" alt="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <img src="./image/administrator_male_48px.png" class="user_pic " alt="profile picture"
+                onclick="togglemenu()" ondblclick="">
+
+            <div class="sub_menu" id="jck">
+                <div>
+
+                    <div class="sub_menu_link ">
+                        <img src="./image/flower.jpg" style="width: 60px; height: 60px;">
+                        <h3 class="" style="margin-top: 20px; margin-left: 0px; font-size: 25px;">Akinshola Akinniyi
+                        </h3>
+                    </div>
+
+                    <hr>
+
+                    <a href="#" class="sub_menu_link ">
+                        <img src="./image/profile_100px.png" width="30px" alt="">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub_menu_link ">
+                        <img src="./image/settings_64px.png" width="30px" alt="">
+                        <p>Settings And Privacy</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub_menu_link ">
+                        <img src="./image/question_mark_48px.png" alt="">
+                        <p>Help and Support</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub_menu_link ">
+                        <img src="./image/export_100px.png" alt="">
+                        <p>Log out</p>
+                        <span>></span>
+                    </a>
+                </div>
+
+            </div>
+
+    </div>
+
+
+    </nav>
+
+
+    </div>
+     explicabo tempore accusamus pariatur porro minus assumenda temporibus dignissimos facilis recusandae non. Fugit.
+
+    <script>
+        let jjc = document.getElementById("jck");
+
+        function togglemenu() {
+            jjc.classList.toggle("jjc");
+        }
+    </script>
+</body>
+.jjc{
+max-width: 400px;
+overflow: hidden;
+/* color: transparent; */
+display: none;
+transition: max-height 0.5s ;
+top: 0%;
+right: 0px;
+/* background: transparent; */
+transition: 0.5s;
+}
+
+</html>
