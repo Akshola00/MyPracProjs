@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    body {
+      font-size: 1rem;
+      line-height: 1.6;
+      /* background-color: #0cf0f1; */
+      color: #667;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 2rem 0;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .menu>li,
+    .menu>a {
+      display: inline-block;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      padding: 10px 1.5rem;
+      transition: background-color .22s ease, color .22s ease;
+    }
+
+    @media (max-width: 541px) {
+        .logo{
+            font-size: 2.5rem;
+        }
+    }
+
+    .submenu {
+      position: absolute;
+      background-color: #2c3e50;
+      width: 140px;
+      left: 0;
+      display: none;
+    }
+
+    .submenu2 {
+      position: absolute;
+      left: 100%;
+      width: 140px;
+      top: 0;
+      background-color: #2c3e50;
+      display: none;
+    }
+
+    .menu li:hover>.submenu {
+      display: block;
+      animation: slideup .3s ease;
+    }
+
+    .submenu li:hover>.submenu2 {
+      display: block;
+      animation: slideleft .3s ease;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">Blog</h1>
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">Article</a>
+          <ul class="submenu">
+            <li><a href="#">FrontEnd</a>
+              <ul class="submenu2">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+              </ul>
+            </li>
+            <li><a href="#">BackEnd</a>
+              <ul class="submenu2">
+                <li><a href="#">NodeJS</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Ruby</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+</body>
+
+</html>

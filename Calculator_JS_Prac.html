@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        p {
+            font-family: system-ui;
+            font-size: 2rem;
+        }
+
+        .calculator {
+            width: 10cm;
+            height: 12cm;
+            background-color: silver;
+
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #input,
+        #result,
+        .input,
+        .result {
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 0 10px;
+            border: none;
+            font-size: 24px;
+            text-align: right;
+            background-color: #f9f9f9;
+        }
+
+        .keypads {
+
+
+            width: calc(100% - 10px);
+            box-sizing: border-box;
+            margin: 0 5px;
+            height: 73%;
+            border-collapse: collapse;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+        }
+
+        .keypads button {
+            font-size: 1.3rem;
+            border-radius: 100px;
+        }
+
+        #result,
+        .result {
+            margin-bottom: 10px;
+            color: #e96900;
+        }
+
+        .history {
+            margin: 0;
+            padding: 2px;
+            border: 1px solid;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            margin-left: 317px;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .p {
+            margin: 0;
+            padding: 2px;
+            border: 1px solid;
+            margin-top: -102px;
+            position: absolute;
+            /* box-sizing: border-box; */
+            margin-left: 13px;
+            cursor: pointer;
+            width: fit-content;
+
+        }
+
+        #x {
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            display: flex;
+            cursor: pointer;
+            font-size: 3rem;
+            color: #f4f4f4;
+        }
+
+        #hist {
+            overflow: auto;
+            position: absolute;
+            margin-top: 10vh;
+            height: 95vh;
+            width: 300px;
+            background-color: silver;
+            z-index: 1;
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>SholaX Calculator</p>
+    <h6 id="history" class="history">HISTORY</h6>
+    <div id="hist">
+        <p id="x">&times;</p>
+
+
+    </div>
+    <div class="calculator">
+        <input style="margin-top: 10px;" type="text" id="input" disabled>
+        <input type="text" id="result" disabled>
+        <div class="keypads">
+            <button onclick="remover()" id="btn">Del</button>
+            <button onclick="clearInput()" id="btn">AC</button>
+            <button onclick="adder('%')" id="btn">%</button>
+            <button onclick="adder('+')" id="btn">+</button>
+            <button onclick="adder('7')" id="btn">7</button>
+            <button onclick="adder('8')" id="btn">8</button>
+            <button onclick="adder('9')" id="btn">9</button>
+            <button onclick="adder('-')" id="btn">-</button>
+            <button onclick="adder('4')" id="btn">4</button>
+            <button onclick="adder('5')" id="btn">5</button>
+            <button onclick="adder('6')" id="btn">6</button>
+            <button onclick="adder('*')" id="btn">*</button>
+            <button onclick="adder('1')" id="btn">1</button>
+            <button onclick="adder('2')" id="btn">2</button>
+            <button onclick="adder('3')" id="btn">3</button>
+            <button onclick="adder('/')" id="btn">/</button>
+            <button onclick="adder('0')" id="btn">0</button>
+            <button onclick="adder('.')" id="btn">&period;</button>
+            <button onclick="calculate()" id="btn" style="margin-top: 269px;
+             border-radius: 100px;
+             margin-left: 205px; width: 158px; 
+             position: absolute; height: 60px; 
+             font-size: 1.6rem; background-color: lightseagreen; 
+             color: black; ">=</button>
+
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById('input');
+        const result = document.getElementById('result');
+
+        function adder(val) {
+            input.value += val;
+            updateResult();
+        }
+
+        function remover() {
+            input.value = input.value.slice(0, -1);
+            updateResult();
+        }
+
+        function clearInput() {
+            input.value = '';
+            result.value = '';
+        }
+
+        function calculate() {
+            try {
+                let output = eval(input.value);
+                result.value = output;
+                console.log(output.value)
+                histfunc();
+            } catch (error) {
+                result.value = "undefined";
+                console.log('china man is not here, check the other room')
+            }
+
+
+
+        }
+
+        function updateResult() {
+            try {
+                let output = eval(input.value);
+                result.value = output || '';
+            } catch (error) {
+                // result.value = "undefined";
+                // console.log('china man is not here, check the other room')
+            }
+
+        }
+        var i = 1;
+        var z = 1;
+
+        function histfunc() {
+            // console.log(input.value);
+            // console.log(result.value);
+
+            const h = document.createElement('input');
+            const r = document.createElement('input');
+            const p = document.createElement('h6');
+
+            r.className = 'result';
+            h.className = 'input';
+            p.className = 'p';
+
+            h.disabled = true;
+            r.disabled = true;
+            h.value = input.value;
+            r.value = result.value;
+
+            var divID = "dynamicDiv_" + i;
+
+            p.setAttribute("id", divID);
+            h.setAttribute("id", divID);
+            r.setAttribute("id", divID);
+
+            const text = document.createTextNode(' DELETE ' + i);
+
+            p.appendChild(text);
+
+            document.getElementById('hist').appendChild(h);
+            document.getElementById('hist').appendChild(r);
+            document.getElementById('hist').appendChild(p);
+
+
+
+            p.addEventListener('click', () => {
+                console.log('Delete ID = ' + divID);
+                p.remove()
+                h.remove()
+                r.remove()
+            });
+
+            i++;
+        }
+
+        const history = document.getElementById('history');
+        const x = document.getElementById('x')
+        const hist = document.getElementById('hist')
+        x.addEventListener('click', () => {
+            hist.style.display = 'none';
+        })
+
+        history.addEventListener('click', () => {
+            hist.style.display = 'block';
+        })
+
+
+    </script>
+</body>
+
+</html>
