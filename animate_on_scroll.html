@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+        .hidden {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100%);
+            transition: all 1s;
+        }
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+        @media(prefers-reduced-animation) {
+            .hidden{
+                transition: none;
+            }
+        }
+        .logo{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .logo:nth-child(2){
+            transition-delay: .2s;
+        }
+        .logo:nth-child(3){
+            transition-delay: .4s;
+        }
+        .logo:nth-child(4){
+            transition-delay: .6s;
+        }
+        .logo>img{
+            width: 100%;
+        }
+        .hidden>div{
+            display: flex;
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi Mom</h1>
+
+    <section class="hidden">
+        <h1>Wtsup Ma</h1>
+        <p>This is My website</p>
+    </section>
+    <section class="hidden">
+        <h1>ndubusi hail</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, molestias?</p>
+    </section>
+    <section class="hidden">
+        <h1>JAil</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit atque, neque commodi molestias accusantium possimus delectus perferendis illum doloribus ipsum?</p>
+    </section>
+    <section class="hidden">
+        <h1>Hail</h1>
+        <p>John Cena</p>
+    </section>
+    <section class="hidden">
+        <h1>Nail</h1>
+        <p>Whale</p>
+    </section>
+    <section class="hidden">
+        <h2>its really good</h2>
+        <div>
+            <div class="logo hidden">
+                <img src="./images/39068.jpg">
+            </div>
+            <div class="logo hidden">
+                <img src="./images/8380015.jpg">
+            </div>
+            <div class="logo hidden">
+                <img src="./images/39068.jpg">
+            </div>
+            <div class="logo hidden">
+                <img src="./images/8380015.jpg">
+            </div>
+        </div>
+    </section>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting){
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        })
+        const hiddenElements = document.querySelectorAll('.hidden')
+        hiddenElements.forEach((el) => observer.observe(el))
+    </script>
+</body>
+</html>
