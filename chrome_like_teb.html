@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tab-container {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.tab {
+    float: left;
+    display: block;
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tab.active {
+    background-color: #4CAF50; /* Set the background color for the active tab */
+    color: white; /* Set the text color for the active tab */
+    border-bottom: none; /* Remove the border-bottom for the active tab */
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+    </style>
+    <title>Tab Bar Example</title>
+</head>
+<body>
+
+    <div class="tab-container">
+        <button class="tab" onclick="openTab('tab1')" id="default-tab">Tab 1</button>
+        <button class="tab" onclick="openTab('tab2')">Tab 2</button>
+        <button class="tab" onclick="openTab('tab3')">Tab 3</button>
+    </div>
+    
+    <div id="tab1" class="tab-content">
+        <h2>Tab 1 Content</h2>
+        <p>This is the content of Tab 1.</p>
+    </div>
+    
+    <div id="tab2" class="tab-content">
+        <h2>Tab 2 Content</h2>
+        <p>This is the content of Tab 2.</p>
+    </div>
+    
+    <div id="tab3" class="tab-content">
+        <h2>Tab 3 Content</h2>
+        <p>This is the content of Tab 3.</p>
+    </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Set the default tab on page load
+    openTab('tab1');
+});
+
+function openTab(tabName) {
+    // Hide all tab content
+    var tabs = document.getElementsByClassName("tab-content");
+    for (var i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    // Deactivate all tabs
+    var tabButtons = document.getElementsByClassName("tab");
+    for (var i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+    }
+
+    // Show the selected tab content
+    document.getElementById(tabName).style.display = "block";
+
+    // Activate the selected tab
+    var activeTab = document.querySelector('.tab-content:visible');
+    if (activeTab) {
+        var activeTabName = activeTab.id;
+        document.querySelector('.tab[data-tab="' + activeTabName + '"]').classList.add("active");
+    }
+}
+
+
+</script>
+</body>
+</html>
